@@ -1,0 +1,53 @@
+<div>
+  <h3>Form Input:</h3>
+  <div>
+    <form [formGroup]="formGroup" (ngSubmit)="submit()">
+      <div>
+        <label for="ID">ID</label>
+        <input type="text" id="id" name="id" formControlName="id" />
+      </div>
+      <div>
+        <label for="nim">NIM</label>
+        <input type="text" id="nim" name="nim" formControlName="nim" />
+      </div>
+      <div>
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" name="nama" formControlName="nama" />
+      </div>
+      <div>
+        <label for="smt">Semester</label>
+        <input type="text" id="smt" name="smt" formControlName="semester" />
+      </div>
+      <div>
+        <button type="submit">Kirim</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<hr />
+<div>
+  <table border="1">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>NIM</td>
+        <td>Nama</td>
+        <td>Semester</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let value of list">
+        <td>{{ value.id }}</td>
+        <td>{{ value.nim }}</td>
+        <td>{{ value.nama }}</td>
+        <td>{{ value.semester }}</td>
+        <td>
+          <button disabled>Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
